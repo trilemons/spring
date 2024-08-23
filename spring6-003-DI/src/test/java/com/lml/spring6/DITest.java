@@ -1,10 +1,7 @@
 package com.lml.spring6;
 
 
-import com.lml.spring6.bean.Person;
-import com.lml.spring6.bean.Student;
-import com.lml.spring6.bean.User;
-import com.lml.spring6.bean.YuQian;
+import com.lml.spring6.bean.*;
 import com.lml.spring6.service.ConstructService;
 import com.lml.spring6.service.UserService;
 import org.junit.Test;
@@ -82,7 +79,13 @@ public class DITest {
         ClassPathXmlApplicationContext classPathXmlApplicationContext = new ClassPathXmlApplicationContext("Spring-collection.xml");
         Person personBean = classPathXmlApplicationContext.getBean("personBean", Person.class);
         System.out.println(personBean);
+    }
 
+    @Test
+    public void springCTest(){
+        ApplicationContext applicationContext = new ClassPathXmlApplicationContext("spring-c.xml");
+        Cat catBean = applicationContext.getBean("catBean", Cat.class);
+        System.out.println(catBean);
 
     }
 }
