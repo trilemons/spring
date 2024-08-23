@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+
+    <bean id="studentBean" class="com.lml.spring6.bean.Student">
+        <property name="sno" value="204159"></property>
+        <property name="c" ref="clazzBean"></property>
+        <property name="c.name" value="高三一班"></property>
+    </bean>
+
+    <bean id="clazzBean" class="com.lml.spring6.bean.Clazz"></bean>
+
+</beans>

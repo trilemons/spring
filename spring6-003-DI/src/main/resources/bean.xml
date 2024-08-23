@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+<!--    Dao-->
+    <bean id="userDaoBean" class="com.lml.spring6.dao.UserDao"></bean>
+    <bean id="vipDaoBean" class="com.lml.spring6.dao.VipDao"></bean>
+<!--    Service-->
+    <bean id="userServiceBean" class="com.lml.spring6.service.UserService">
+<!--        set注入使用set方法名”set+name“中的name来给下面的name赋值-->
+        <property name="userDao" ref="userDaoBean"></property>
+        <property name="xyz" ref="vipDaoBean"></property>
+    </bean>
+
+</beans>

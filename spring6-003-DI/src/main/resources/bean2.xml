@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+    <bean id="userDaoBean" class="com.lml.spring6.dao.UserDao"></bean>
+    <bean id="vipDaoBean" class="com.lml.spring6.dao.VipDao"></bean>
+    <bean id="constructServiceBean" class="com.lml.spring6.service.ConstructService">
+<!--        根据构造方法的参数列表下标进行注入-->
+<!--        <constructor-arg index="0" ref="userDaoBean"></constructor-arg>-->
+<!--        <constructor-arg index="1" ref="vipDaoBean"></constructor-arg>-->
+<!--        根据构造方法的参数列表的参数名进行注入-->
+        <constructor-arg name="userDao" ref="userDaoBean"></constructor-arg>
+        <constructor-arg name="vipDao" ref="vipDaoBean"></constructor-arg>
+<!--        既不使用下标，也不使用下标，而是根据类型进行注入-->
+    </bean>
+
+</beans>
