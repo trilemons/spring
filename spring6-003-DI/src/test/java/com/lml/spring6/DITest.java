@@ -30,7 +30,7 @@ public class DITest {
     public void setDiTest(){
         ApplicationContext applicationContext = new ClassPathXmlApplicationContext("setBeans.xml");
         User userBean = applicationContext.getBean("userBean", User.class);
-        System.out.println(userBean.toString());
+        System.out.println(userBean);
 
         System.out.println(Integer.TYPE);
     }
@@ -51,7 +51,7 @@ public class DITest {
             a[i] = (int)(Math.random()*10);
         }
 
-        int temp = 0;
+        int temp;
 
         for (int i = 0;i<a.length;i++)
             for (int j = 0; j <a.length-i-1 ; j++) {
