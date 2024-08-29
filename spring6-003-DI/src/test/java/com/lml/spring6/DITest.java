@@ -88,4 +88,12 @@ public class DITest {
         System.out.println(catBean);
 
     }
+
+    @Test
+    public void outerPropertiesTest(){
+        ApplicationContext applicationContext = new ClassPathXmlApplicationContext("spring-propertie.xml");
+        MyDataSource myDataSourceBean = applicationContext.getBean("myDataSourceBean", MyDataSource.class);
+        System.out.println(myDataSourceBean);
+
+    }
 }

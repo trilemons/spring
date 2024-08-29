@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:context="http://www.springframework.org/schema/context"
+       xmlns:aop="http://www.springframework.org/schema/aop"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans     http://www.springframework.org/schema/beans/spring-beans.xsd
+                           http://www.springframework.org/schema/context   http://www.springframework.org/schema/context/spring-context.xsd
+                           http://www.springframework.org/schema/aop       http://www.springframework.org/schema/aop/spring-aop.xsd">
+
+    <!--  扫描包  -->
+    <context:component-scan base-package="com.lml.spring.service"/>
+    <!--  设置自动代理
+          proxy-target-class:true  表示使用CGLib动态代理
+          proxy-target-class:false 默认值 目标对象为接口使用JDK动态代理，目标对象为类的使用CGLib动态代理
+      -->
+    <aop:aspectj-autoproxy proxy-target-class="true"/>
+
+</beans>
